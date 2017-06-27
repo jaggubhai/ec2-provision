@@ -1,0 +1,28 @@
+---
+- hosts: windows
+  gather_facts: false
+  tasks:
+
+   - name: Download tableau server installer to specified path
+     win_get_url:
+       url: https://downloads.tableau.com/esdalt/10.3.0/TableauServer-64bit-10-3-0.exe
+       dest: C:\Users\Administrator\Downloads\TableauServer-64bit-10-3-0.exe
+
+   - name: download PSTools installer
+     win_get_url:
+       url: https://download.sysinternals.com/files/PSTools.zip
+       dest: C:\Users\Administrator\Desktop\PSTools.zip
+
+   - name: Unzip a bz2 (BZip) file
+     win_unzip:
+       src: C:\Users\Administrator\Desktop\PSTools.zip
+       dest: C:\Users\Administrator\Desktop\PSTools
+
+   - name: Install the Tableau
+     win_psexec:
+       command: C:\Users\Administrator\Downloads\TableauServer-64bit-10-3-0.exe /SILENT /ACCEPTEULA
+       executable: C:\Users\Administrator\Desktop\PSTools\psexec.exe
+       system: yes   
+       wait: no
+
+
