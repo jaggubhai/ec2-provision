@@ -1,8 +1,8 @@
 ec2_keypair: "tableau"
-ec2_security_group: "sg-df7712b8"
+ec2_security_group: "securitygroup"
 ec2_instance_type: "m4.2xlarge"
 ec2_image: "ami-9e3bbefd"
-ec2_subnet_ids: ['subnet-9ffbbce9','subnet-ac2371c8']
+ec2_subnet_ids: ['subnet','subne']
 ec2_region: "ap-southeast-1"
 ec2_tag_Name: "Tableau-ansible"
 ec2_tag_Pod: "Automation"
