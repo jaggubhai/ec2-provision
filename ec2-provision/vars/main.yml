@@ -1,4 +1,4 @@
-ec2_keypair: "ansible"
+ec2_keypair: "tableau"
 ec2_security_group: "sg-df7712b8"
 ec2_instance_type: "m4.2xlarge"
 ec2_image: "ami-9e3bbefd"
